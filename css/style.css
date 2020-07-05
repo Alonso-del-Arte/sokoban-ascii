@@ -6,6 +6,7 @@ div#board td.wall, ul#legend span.wall { font-weight: bold }
 // div#board td.wall {}
 div#board td.goal, ul#legend span.goal { color: gray }
 div#board td.box, ul#legend span.box { color: darkgoldenrod }
-div#board td.boxOnGoal, ul#legend span.boxOnGoal { color: orange }
+div#board td.boxOnGoal, ul#legend span.boxOnGoal { color: orange; text-shadow: 3px 3px 5px darkgoldenrod }
 div#board td.pusher, ul#legend span.pusher { color: darkblue }
-div#board td.pusherOnGoal, ul#legend span.pusherOnGoal { color: blue }
+div#board td.pusherOnGoal, ul#legend span.pusherOnGoal { color: blue; text-shadow: 3px 3px 5px darkblue }
+span#nextLevelLink { display: none }

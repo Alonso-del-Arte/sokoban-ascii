@@ -1,7 +1,8 @@
 var initBoardElem, boardElem, boardDiv;
+var statsDiv, nextLevelSpan;
 var initialState = [], currentState = [];
 var playerX, playerY;
-var moveCount = 0, boxCount = 0, boxOnGoalCount = 0;;
+var moveCount = 0, pushCount = 0, boxCount = 0, boxOnGoalCount = 0;
 
 function queryPosition(x, y) {
     return currentState[x][y];
@@ -19,18 +20,22 @@ function canPush(absX, absY, relX, relY) {
         case " ":
             if (currBoxToken == "*") {
                 changePosition(absX, absY, ".");
+                boxOnGoalCount--;
             } else {
                 changePosition(absX, absY, " ");
             }
             changePosition(proposedX, proposedY, "$");
+            pushCount++;
             return true;
         case ".":
             if (currBoxToken == "*") {
                 changePosition(absX, absY, ".");
             } else {
                 changePosition(absX, absY, " ");
+                boxOnGoalCount++;
             }
             changePosition(proposedX, proposedY, "*");
+            pushCount++;
             return true;
         default:
             return false;
@@ -58,6 +63,7 @@ function canMove(relativeX, relativeY) {
                 playerX = absoluteX;
                 playerY = absoluteY;
                 changePosition(playerX, playerY, playerToken);
+                moveCount++;
                 return true;
             }
             return false;
@@ -70,6 +76,7 @@ function canMove(relativeX, relativeY) {
             playerX = absoluteX;
             playerY = absoluteY;
             changePosition(playerX, playerY, "@");
+            moveCount++;
             return true;
         case ".":
             if (currPlayerToken == "@") {
@@ -80,6 +87,7 @@ function canMove(relativeX, relativeY) {
             playerX = absoluteX;
             playerY = absoluteY;
             changePosition(playerX, playerY, "+");
+            moveCount++;
             return true;
         default:
             return false;
@@ -211,17 +219,25 @@ function writeBoard() {
         brd = brd + "</tr>";
     }
     boardElem.innerHTML = brd;
+    statsDiv.innerHTML = "Moves: " + moveCount + " &mdash; Pushes: " + 
+        pushCount + " &mdash; Boxes: " + boxCount + " &mdash; Boxes on goals: " + 
+        boxOnGoalCount;
+    if (boxCount == boxOnGoalCount) {
+        alert("Congratulations, you've solved it!");
+        nextLevelSpan.style.display = "inherit";
+    }
 }
 
 function initialize() {
     initBoardElem = document.getElementsByTagName("pre").item(0);
     initialState = parseBoard(initBoardElem.innerHTML);
-    console.log(initialState);
     currentState = initialState;
     boardElem = document.createElement("table");
     document.onkeydown = processArrowKey;
     boardDiv = document.getElementById("board");
     boardDiv.appendChild(boardElem);
     initBoardElem.style.display = "none";
+    statsDiv = document.getElementById("stats");
+    nextLevelSpan = document.getElementById("nextLevelLink");
     writeBoard();
 }
