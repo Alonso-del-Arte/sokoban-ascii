@@ -1,3 +1,11 @@
 a:link { text-decoration: none }
 a:hover { font-weight: bold; text-decoration: underline }
-pre#board { font-size: 20pt }
+pre, div#board table, ul#legend span { font-size: 20pt }
+div#board td, ul#legend span { font-family: "Courier New", Courier, monospace }
+div#board td.wall, ul#legend span.wall { font-weight: bold }
+// div#board td.wall {}
+div#board td.goal, ul#legend span.goal { color: gray }
+div#board td.box, ul#legend span.box { color: darkgoldenrod }
+div#board td.boxOnGoal, ul#legend span.boxOnGoal { color: orange }
+div#board td.pusher, ul#legend span.pusher { color: darkblue }
+div#board td.pusherOnGoal, ul#legend span.pusherOnGoal { color: blue }
