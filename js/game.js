@@ -2,7 +2,8 @@ var initBoardElem, boardElem, boardDiv;
 var statsDiv, nextLevelSpan;
 var initialState = [], currentState = [];
 var playerX, playerY;
-var moveCount = 0, pushCount = 0, boxCount = 0, boxOnGoalCount = 0;
+var moveCount = 0, pushCount = 0, boxCount = 0, boxOnGoalCount = 0, 
+    goalCount = 0;
 
 function queryPosition(x, y) {
     return currentState[x][y];
@@ -118,7 +119,6 @@ function processArrowKey(e) {
             y = 0;
     }
     if (canMove(x, y)) {
-        moveCount++;
         writeBoard();
     }
 }
@@ -155,6 +155,7 @@ function parseBoard(boardStr) {
                 playerX = row;
                 playerY = col;
                 col++;
+                goalCount++;
                 break;
             case "$":
             case "b":
@@ -168,10 +169,12 @@ function parseBoard(boardStr) {
                 col++;
                 boxCount++;
                 boxOnGoalCount++;
+                goalCount++;
                 break;
             case ".":
                 parsedSoFar.push(".");
                 col++;
+                goalCount++;
                 break;
             case ";":
                 rowsSoFar.push(parsedSoFar);
@@ -239,5 +242,9 @@ function initialize() {
     initBoardElem.style.display = "none";
     statsDiv = document.getElementById("stats");
     nextLevelSpan = document.getElementById("nextLevelLink");
+    if (boxCount != goalCount) {
+        alert("WARNING: This level has " + boxCount + " box(es) but " + 
+              goalCount + " goal(s)");
+    }
     writeBoard();
 }

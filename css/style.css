@@ -9,4 +9,5 @@ div#board td.box, ul#legend span.box { color: darkgoldenrod }
 div#board td.boxOnGoal, ul#legend span.boxOnGoal { color: orange; text-shadow: 3px 3px 5px darkgoldenrod }
 div#board td.pusher, ul#legend span.pusher { color: darkblue }
 div#board td.pusherOnGoal, ul#legend span.pusherOnGoal { color: blue; text-shadow: 3px 3px 5px darkblue }
+iframe#legend { float: right; height: 120% }
 span#nextLevelLink { display: none }
