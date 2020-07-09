@@ -11,3 +11,5 @@ div#board td.pusher, span.pusher { color: darkblue }
 div#board td.pusherOnGoal, span.pusherOnGoal { color: blue; text-shadow: 3px 3px 5px darkblue }
 iframe#legend { float: right; height: 120% }
 span#nextLevelLink { display: none }
+p#folderStructureWarning { visibility: hidden; position: relative }
+p#folderStructureWarning:after { position: absolute; top: 0; left: 0; visibility: visible; font-size: inherit; text-transform: none; content: 'If the style sheet and script are correctly linked, the text with ID "folderStructureWarning" may be safely deleted.' }
