@@ -6,11 +6,11 @@ The idea for this project was that it would just be a quick and dirty implementa
 
 This project has helped clarify certain details in my mind as I set to work on a more structured, object-oriented implementation in Scala. Quick and dirty also means that I wasn't going to be using pure functions or immutable data structures in the JavaScript implementation, or even creating objects for the various game pieces.
 
-This implementation will warn you if a level has too many boxes or too few boxes in regards to goals, but will still let you play. It may even be possible to "win," if the deficiency is of boxes rather than goals. There will be no other indications of problems, such as unmoveable boxes or unreachable goals.
+This implementation will warn you if a level has too many boxes or too few boxes in regards to goals, but will still let you play a level with a surplus or deficit of boxes. It may even be possible to "win," if the deficiency is of boxes rather than goals. There will be no other indications of problems, such as unmoveable boxes or unreachable goals.
 
 If a board has more than one player token, the last occurring player token will be recognized as such, but the previous player tokens will remain on the board; I make no guarantees whatseover about the functioning of the program in such a situation.
 
-For now there is no undo, but I might implement it later. If you push a box too far, you'll have to refresh (F5) to start over.
+For now there is no single-move undo, but I might implement it later. If you push a box too far, you'll have to refresh (F5) to start over.
 
 I might also do some refactoring, but I'll probably get to a point of deciding this is good enough for quick and dirty and leave it at that. To be honest with you, I'm not terribly concerned about mobile.
 
@@ -20,12 +20,14 @@ UPDATE: I tried it in Edge and it works as expected. However, there is one littl
 
 ## Making your own ASCII Sokoban levels
 
-You can use the page for the level Extremely Easy No. 1 as a template, or any of the levels in the `levels` folder. Be sure to replace the HTML metadata in the Head section, the H1 heading and also the links to previous and next levels.
+You can use the page for the level Extremely Easy No. 1 as a template, or any of the levels in the `levels` folder. However, `Template.html` and `ExtraTemplate.html` are better for this purporse, because they include indicators to let you know if the CSS and JavaScript are not properly linked.
+
+Be sure to replace the HTML metadata in the Head section, the H1 heading and also the links to previous and next levels.
 
 The most important thing to replace, of course, is the text in the Preformatted tag. The following symbols should appear in varying proportions:
 
 - `#` (pound sign) for wall bricks
-- ` ` (space), `-` (dash) or `_` (underscore) for floor tiles
+- ` ` (space), `-` (dash) or `_` (underscore) for floor tiles (there's no distinguishing between exterior and interior)
 - `.` (period) for an empty goal
 - `@` (at sign) or `p` (lowercase P) for a player token not on a goal, `+` (plus sign) or `P` (uppercase P) for a player token on a goal; there should only be one of these in a level
 - `$` (dollar sign) or `b` (lowercase B) for a box not on a goal, `*` (asterisk) or `B` (uppercase B) for a box on a goal; the total count of goals (regardless of occupancy) should match the total count of boxes (regardless of location)
