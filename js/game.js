@@ -231,6 +231,10 @@ function writeBoard() {
     }
 }
 
+// TODO: Hint disclose
+
+// TODO: Solution disclose
+
 function initialize() {
     initBoardElem = document.getElementsByTagName("pre").item(0);
     initialState = parseBoard(initBoardElem.innerHTML);

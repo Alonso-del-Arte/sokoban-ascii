@@ -1,4 +1,4 @@
-p.hintLeft { float: left; width: 10em; padding-right: 1em; text-align: justify; font-size: 14pt }
+h2.byLine {}
 a:link { text-decoration: none }
 a:hover { font-weight: bold; text-decoration: underline }
 pre, div#board table, ul#legend span { font-size: 20pt }
@@ -10,6 +10,9 @@ div#board td.boxOnGoal, span.boxOnGoal { color: orange; text-shadow: 3px 3px 5px
 div#board td.pusher, span.pusher { color: darkblue }
 div#board td.pusherOnGoal, span.pusherOnGoal { color: blue; text-shadow: 3px 3px 5px darkblue }
 iframe#legend { float: right; height: 120% }
+div.hint {}
+div.solution {}
+p.hintLeft { float: left; width: 10em; padding-right: 1em; text-align: justify; font-size: 14pt }
 span#nextLevelLink { display: none }
 p#folderStructureWarning { visibility: hidden; position: relative }
 p#folderStructureWarning:after { position: absolute; top: 0; left: 0; visibility: visible; font-size: inherit; text-transform: none; content: 'If the style sheet and script are correctly linked, the text with ID "folderStructureWarning" may be safely deleted.' }
