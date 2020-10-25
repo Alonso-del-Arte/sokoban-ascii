@@ -1,6 +1,6 @@
 # Contributing guidelines for Hacktoberfest
 
-Pull requests should generally correspond to open issues.
+Pull requests should generally correspond to open issues. Pull requests should always be for the master branch. I'll decide when to update the gh-pages branch.
 
 As this is supposed to be quick and dirty, I'm not interested in moving to ES6 or any later versions of JavaScript.
 
