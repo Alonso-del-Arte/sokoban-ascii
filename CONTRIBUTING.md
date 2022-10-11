@@ -1,6 +1,8 @@
 # Contributing guidelines for Hacktoberfest
 
-Pull requests should generally correspond to open issues. You may file issues, but I'm free to close them as "won't fix" at my discretion. Pull requests should always be for the master branch. I'll decide when to update the gh-pages branch.
+NOTE: The default branch was originally named master. It's now main. If you forked prior to that change, please take the appropriate option to realign the branch names.
+
+Pull requests should generally correspond to open issues. You may file issues, but I'm free to close them as "won't fix" at my discretion. Pull requests should always be for the main branch. I'll decide when to update the gh-pages branch.
 
 As this is supposed to be quick and dirty, I'm not interested in moving to ES6 or any later versions of JavaScript.
 
