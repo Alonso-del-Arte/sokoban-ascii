@@ -1,3 +1,5 @@
+I intend to open this project to Hacktoberfest 2023
+
 # Contributing guidelines for Hacktoberfest
 
 NOTE: The default branch was originally named master. It's now main. If you forked prior to that change, please take the appropriate option to realign the branch names.
