@@ -1,5 +1,7 @@
 # ASCII Sokoban
 
+To play ASCII Sokoban right in your Web browser, go to [the gh-pages](https://alonso-del-arte.github.io/sokoban-ascii/index.html).
+
 Sokoban, 倉庫番(そうこばん, sōkoban) literally "warehouse keeper" is a classic puzzle game that has had many different implementations since the original in the 1980s. There are implementations that you can play online, but, as far as I know, no ASCII-only implementations.
 
 The idea for this project was that it would just be a quick and dirty implementation of Sokoban using HTML, CSS and JavaScript. I thought I would start with ES5, run into trouble, have to refactor to ES6 and still run into problems.
