@@ -35,3 +35,6 @@ that at least one visitor to that website has been able to solve it.
 Also, the level must have only one player token (pusher) and the number of boxes 
 must match the number of goals. However, template levels must have two player 
 tokens and more goals than boxes. Though I'm not too keen to add template levels.
+
+Be sure to indicate your authorship of the level both in metadata and the actual 
+body text.
