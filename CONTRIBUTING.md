@@ -1,4 +1,4 @@
-I intend to open this project to Hacktoberfest 2023
+This project is now officially open to Hacktoberfest 2023.
 
 # Contributing guidelines for Hacktoberfest
 
